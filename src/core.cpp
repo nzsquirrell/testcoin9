@@ -217,6 +217,11 @@ uint256 CBlockHeader::GetHash() const
     return Hash(BEGIN(nVersion), END(nNonce));
 }
 
+uint256 CBlockHeader::GetPoWHash() const
+{
+    return Hash(BEGIN(nVersion), END(nNonce));
+}
+
 uint256 CBlock::BuildMerkleTree() const
 {
     vMerkleTree.clear();
